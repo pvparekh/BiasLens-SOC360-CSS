@@ -75,7 +75,7 @@ gender_word_stats <- tokens %>%
   summarise(
     count = n(),                     # how many times this word appears overall
     male_count = sum(has_male),      # how many times the word appeared in a male-flagged bio
-    female_count = sum(has_female),  # how many times in a female-flagged bio
+    female_count = sum(has_female),  # how many times in a female flagged bio
     male_ratio = male_count / count, # proportion in male bios
     female_ratio = female_count / count # proportion in female bios
   ) %>%
