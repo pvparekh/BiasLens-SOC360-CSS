@@ -75,7 +75,7 @@ ui <- fluidPage(
       .hero-card .big-title {
         font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
         font-weight: 800;
-        font-size: 34px;
+        font-size: 45px;
         margin: 0 0 12px 0;
         line-height: 1.04;
         text-align: center;
