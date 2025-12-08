@@ -320,7 +320,7 @@ ui <- fluidPage(
                       div(class = "card",
                           h4("Sample biographies"),
                           p(class = "small-note",
-                            "Showing the cleaned biographies with pronoun flags (paginated)."),
+                            "Showing the cleaned biographies with assigned pronoun flags during preprocessing."),
                           DTOutput("rawTable", height = "1000px")
                       )
              ),
