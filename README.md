@@ -1,15 +1,20 @@
 # BiasLens — Gender & Language Bias Explorer
 
-![BiasLens Screenshot](screenshotsite.png)
-![BiasLens Screenshot](screenshotsite2.png)
-
-
 **Live App:** [https://pvparekh22.shinyapps.io/BiasLens-SOC360-CSS/](https://pvparekh22.shinyapps.io/BiasLens-SOC360-CSS/)
+
+
+
+![BiasLens Screenshot](ss22.png)
+
+
 
 ---
 
 ## Overview
 BiasLens is an interactive R Shiny application that analyzes gendered language patterns in Wikipedia biography abstracts. It identifies words disproportionately associated with men or women and visualizes these associations in a user-friendly interface.
+
+![BiasLens Screenshot](ss11.png)
+
 
 The app allows users to explore male- and female-associated words, view detailed tables of word statistics, and download filtered data for further analysis. It was developed as a final project for SOC360 — Computational Social Science at Rutgers University.
 
