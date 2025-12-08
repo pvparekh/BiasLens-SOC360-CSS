@@ -29,6 +29,29 @@ ui <- fluidPage(
     tags$style(HTML("
       body { background: linear-gradient(to right, #f1f5f9, #ffffff); }
 
+      /* --- TITLE + LOGO ROW --- */
+      .title-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;   /* centers the pair together */
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .big-title {
+    text-align: left !important;   /* prevents forcing layout downward */
+    margin: 0;
+    padding: 0;
+  }
+
+  .lens-logo {
+    height: 42px;       /* sweet spot size */
+    width: auto;
+    opacity: 0.95;
+    margin-top: 8px;    /* perfect vertical alignment */
+  }
+
       .card {
         background: linear-gradient(135deg, #ffffff, #e9f0f7);
         border-radius: 12px;
@@ -65,6 +88,7 @@ ui <- fluidPage(
         animation-fill-mode: forwards;
         animation-iteration-count: 1;
       }
+
       @keyframes dropInBounce {
         0%   { opacity: 0; transform: translateY(-60px) scale(0.98); }
         65%  { opacity: 1; transform: translateY(8px)   scale(1.02); }
@@ -185,39 +209,70 @@ ui <- fluidPage(
         .hero-card .big-title { font-size: 26px; }
         .sidebar { margin-bottom: 10px; }
       }
-    "))
+"))
   ),
   
   # ---------- Header ----------
   fluidRow(
-    column(12,
-           div(class = "hero-card card",
-               div(class = "hero-decor-left"),
-               div(class = "hero-decor-right"),
-               
-               actionBttn(inputId = "refresh", label = NULL, style = "simple",
-                          color = "primary", size = "xs",
-                          icon = icon("sync"), class = "refresh-btn"),
-               
-               div(style = "text-align:center; padding-top:6px; padding-bottom:6px;",
-                   h1(HTML('<span class="big-title"><span class="bias-blue">Bias</span><span class="lens-white">Lens</span></span>')),
-                   p("Interactive explorer using Wikipedia biography data for analyzing word and gender association.", class = "subtle"),
-                   div(class = "hero-stats-wrap",
-                       div(class = "quick-stats",
-                           div(class = "stat",
-                               span(class = "stat-label", "Biographies:"),
-                               span(class = "stat-value", format(nrow(people_df), big.mark = ","))
-                           ),
-                           div(class = "stat",
-                               span(class = "stat-label", "Unique words:"),
-                               span(class = "stat-value", format(nrow(gender_word_stats), big.mark = ","))
-                           )
-                       )
-                   )
-               )
-           )
+    column(
+      12,
+      div(
+        class = "hero-card card",
+        
+        # background accents
+        div(class = "hero-decor-left"),
+        div(class = "hero-decor-right"),
+        
+        # refresh button
+        actionBttn(
+          inputId = "refresh",
+          label = NULL,
+          style = "simple",
+          color = "primary",
+          size = "xs",
+          icon = icon("sync"),
+          class = "refresh-btn"
+        ),
+        
+        # TITLE ROW (title + lens icon)
+        div(
+          class = "title-row",
+          h1(
+            HTML(
+              '<span class="big-title">
+       <span class="bias-blue">Bias</span><span class="lens-white">Lens</span>
+     </span>'
+            )
+          ),
+          
+          tags$img(src = "lens.png", class = "lens-logo")
+        ),
+        
+        p(
+          "Interactive explorer using Wikipedia biography data for analyzing word and gender association.",
+          class = "subtle"
+        ),
+        
+        div(
+          class = "hero-stats-wrap",
+          div(
+            class = "quick-stats",
+            div(
+              class = "stat",
+              span(class = "stat-label", "Biographies:"),
+              span(class = "stat-value", format(nrow(people_df), big.mark = ","))
+            ),
+            div(
+              class = "stat",
+              span(class = "stat-label", "Unique words:"),
+              span(class = "stat-value", format(nrow(gender_word_stats), big.mark = ","))
+            )
+          )
+        )
+      )
     )
   ),
+  
   
   # ---------- Main body ----------
   fluidRow(
