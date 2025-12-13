@@ -306,6 +306,7 @@ ui <- fluidPage(
     column(10, class = "main-panel",
            tabsetPanel(
              id = "main_tabs",
+             selected = "Top Gendered Words",
              tabPanel("Word Cloud",
                       br(),
                       div(class = "card",

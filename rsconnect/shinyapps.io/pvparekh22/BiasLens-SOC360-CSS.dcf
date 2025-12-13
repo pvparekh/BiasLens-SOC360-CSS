@@ -5,9 +5,9 @@ account: pvparekh22
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 16163660
-bundleId: 11317484
+bundleId: 11317549
 url: https://pvparekh22.shinyapps.io/BiasLens-SOC360-CSS/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: clean.Rmd|preprocess.R|README.md|ss11.png
+ignoredFiles: clean.Rmd|preprocess.R|README.md|ss11.png|ss12.png
